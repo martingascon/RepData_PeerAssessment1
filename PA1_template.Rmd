@@ -10,9 +10,8 @@ Show any code that is needed to
 1. Load the data (i.e. read.csv())
 
 ```{r}
-
-setwd('~/Dropbox/Personal/Coursera/q_Reproducible_Research/RepData_PeerAssessment1')
-data<-read.csv("./activity.csv",header=TRUE)
+unzip(zipfile="activity.zip")
+data <- read.csv("activity.csv")
 ```
 
 2. Process/transform the data (if necessary) into a format suitable for your analysis
@@ -94,7 +93,6 @@ for (i in 1:nrow(data)){
     new_NAs[i]<-spi$steps[which(spi$interval == data$interval[i])]
   }
 }
-#head(new_NAs)
 ``` 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
